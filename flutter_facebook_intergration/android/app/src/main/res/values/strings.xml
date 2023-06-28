@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Zippy</string>
+    <string name="facebook_app_id">1364360537742754</string>
+    <string name="fb_login_protocol_scheme">fb1364360537742754</string>
+    <string name="facebook_client_token">b2b2fefeb049e2f4816f256a72c1f804</string>
+
+
+</resources>

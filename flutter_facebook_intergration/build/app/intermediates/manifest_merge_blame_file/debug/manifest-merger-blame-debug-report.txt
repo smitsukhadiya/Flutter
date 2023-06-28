@@ -1,0 +1,190 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutter_facebook_intergration"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="33" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->D:\project\flutter_facebook_intergration\android\app\src\main\AndroidManifest.xml:5:5-66
+15-->D:\project\flutter_facebook_intergration\android\app\src\main\AndroidManifest.xml:5:22-64
+16
+17    <queries>
+17-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:17:5-19:15
+18        <package android:name="com.facebook.katana" />
+18-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:18:9-55
+18-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:18:18-52
+19    </queries>
+20
+21    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+21-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:16:5-79
+21-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:16:22-76
+22    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+22-->[com.android.installreferrer:installreferrer:1.0] C:\Users\SMIT\.gradle\caches\transforms-3\5c4bcf2877bbbac8241f253ae5095f0b\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+22-->[com.android.installreferrer:installreferrer:1.0] C:\Users\SMIT\.gradle\caches\transforms-3\5c4bcf2877bbbac8241f253ae5095f0b\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+23
+24    <application
+25        android:name="android.app.Application"
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.6.0] C:\Users\SMIT\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+29        android:label="flutter_facebook_intergration"
+30        android:supportsRtl="true" >
+30-->[com.facebook.android:facebook-android-sdk:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\cdfc111a031557117a4aaaadb9ed066e\transformed\jetified-facebook-android-sdk-16.0.0\AndroidManifest.xml:16:18-44
+31        <meta-data
+32            android:name="com.facebook.sdk.ApplicationId"
+33            android:value="@string/facebook_app_id" />
+34        <meta-data
+35            android:name="com.facebook.sdk.ClientToken"
+36            android:value="@string/facebook_client_token" />
+37
+38        <activity
+39            android:name="com.facebook.FacebookActivity"
+40            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+41            android:label="@string/app_name"
+42            android:theme="@style/com_facebook_activity_theme" />
+42-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:25:13-63
+43        <activity
+44            android:name="com.facebook.CustomTabActivity"
+45            android:exported="true" >
+46            <intent-filter>
+47                <action android:name="android.intent.action.VIEW" />
+47-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:32:17-69
+47-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:32:25-66
+48
+49                <category android:name="android.intent.category.DEFAULT" />
+49-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:34:17-76
+49-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:34:27-73
+50                <category android:name="android.intent.category.BROWSABLE" />
+50-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:35:17-78
+50-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:35:27-75
+51
+52                <data android:scheme="@string/fb_login_protocol_scheme" />
+52-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:37:17-39:50
+52-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:39:21-47
+53            </intent-filter>
+54            <intent-filter>
+54-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:31:13-40:29
+55                <action android:name="android.intent.action.VIEW" />
+55-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:32:17-69
+55-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:32:25-66
+56
+57                <category android:name="android.intent.category.DEFAULT" />
+57-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:34:17-76
+57-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:34:27-73
+58                <category android:name="android.intent.category.BROWSABLE" />
+58-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:35:17-78
+58-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:35:27-75
+59
+60                <data
+60-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:37:17-39:50
+61                    android:host="cct.com.example.flutter_facebook_intergration"
+61-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:38:21-56
+62                    android:scheme="fbconnect" />
+62-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:39:21-47
+63            </intent-filter>
+64        </activity>
+65        <activity
+66            android:name="com.example.flutter_facebook_intergration.MainActivity"
+67            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+68            android:exported="true"
+69            android:hardwareAccelerated="true"
+70            android:launchMode="singleTop"
+71            android:theme="@style/LaunchTheme"
+72            android:windowSoftInputMode="adjustResize" >
+73
+74            <!--
+75                 Specifies an Android theme to apply to this Activity as soon as
+76                 the Android process has started. This theme is visible to the user
+77                 while the Flutter UI initializes. After that, this theme continues
+78                 to determine the Window background behind the Flutter UI.
+79            -->
+80            <meta-data
+81                android:name="io.flutter.embedding.android.NormalTheme"
+82                android:resource="@style/NormalTheme" />
+83
+84            <intent-filter>
+85                <action android:name="android.intent.action.MAIN" />
+86
+87                <category android:name="android.intent.category.LAUNCHER" />
+88            </intent-filter>
+89        </activity>
+90        <!--
+91             Don't delete the meta-data below.
+92             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+93        -->
+94        <meta-data
+95            android:name="flutterEmbedding"
+96            android:value="2" />
+97
+98        <uses-library
+98-->[androidx.window:window:1.0.0-beta04] C:\Users\SMIT\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+99            android:name="androidx.window.extensions"
+99-->[androidx.window:window:1.0.0-beta04] C:\Users\SMIT\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+100            android:required="false" />
+100-->[androidx.window:window:1.0.0-beta04] C:\Users\SMIT\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+101        <uses-library
+101-->[androidx.window:window:1.0.0-beta04] C:\Users\SMIT\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+102            android:name="androidx.window.sidecar"
+102-->[androidx.window:window:1.0.0-beta04] C:\Users\SMIT\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+103            android:required="false" />
+103-->[androidx.window:window:1.0.0-beta04] C:\Users\SMIT\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+104
+105        <activity android:name="com.facebook.CustomTabMainActivity" />
+105-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:26:9-71
+105-->[com.facebook.android:facebook-common:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\1f24bc51a3cd38ef3804f9c04fbfefa0\transformed\jetified-facebook-common-16.0.0\AndroidManifest.xml:26:19-68
+106        <!--
+107         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+108         with the application context. This config is merged in with the host app's manifest,
+109         but there can only be one provider with the same authority activated at any given
+110         point; so if the end user has two or more different apps that use Facebook SDK, only the
+111         first one will be able to use the provider. To work around this problem, we use the
+112         following placeholder in the authority to identify each host application as if it was
+113         a completely different provider.
+114        -->
+115        <provider
+115-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:29:9-32:40
+116            android:name="com.facebook.internal.FacebookInitProvider"
+116-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:30:13-70
+117            android:authorities="com.example.flutter_facebook_intergration.FacebookInitProvider"
+117-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:31:13-72
+118            android:exported="false" />
+118-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:32:13-37
+119
+120        <receiver
+120-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:34:9-40:20
+121            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+121-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:35:13-86
+122            android:exported="false" >
+122-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:36:13-37
+123            <intent-filter>
+123-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:37:13-39:29
+124                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+124-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:38:17-95
+124-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:38:25-92
+125            </intent-filter>
+126        </receiver>
+127        <receiver
+127-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:41:9-47:20
+128            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+128-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:42:13-118
+129            android:exported="false" >
+129-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:43:13-37
+130            <intent-filter>
+130-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:44:13-46:29
+131                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+131-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:45:17-103
+131-->[com.facebook.android:facebook-core:16.0.0] C:\Users\SMIT\.gradle\caches\transforms-3\f562ac022bfaec9487da1fb6c529666f\transformed\jetified-facebook-core-16.0.0\AndroidManifest.xml:45:25-100
+132            </intent-filter>
+133        </receiver>
+134    </application>
+135
+136</manifest>
