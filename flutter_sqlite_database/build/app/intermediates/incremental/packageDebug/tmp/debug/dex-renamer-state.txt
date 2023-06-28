@@ -1,0 +1,4 @@
+#Sat Nov 26 15:11:24 IST 2022
+base.0=D\:\\flutter_sqlite_database\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
