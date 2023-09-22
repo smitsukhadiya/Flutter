@@ -8,16 +8,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+      //s  useMaterial3: true,
+      ),
       title: 'Material App',
       home: d1(),
       debugShowCheckedModeBanner: false,
     );
   }
-}
-
-class d1 extends StatefulWidget {
-  @override
-  State<d1> createState() => _d1State();
 }
 
 class _d1State extends State<d1> {
@@ -32,23 +30,23 @@ class _d1State extends State<d1> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.grey.shade900,
-        title: Text('Task Management (D1)'),
+        title: const Text('Task Management (D1)'),
         elevation: 20,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(7, 5, 7, 5),
+              padding: const EdgeInsets.fromLTRB(7, 5, 7, 5),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search Task By Name',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20)),
-                  prefixIcon: Icon(Icons.manage_search),
+                  prefixIcon: const Icon(Icons.manage_search),
                 ),
                 onChanged: (value) {
                   setState(() {
@@ -56,19 +54,23 @@ class _d1State extends State<d1> {
                       filteredList.clear();
                       filteredList.addAll(taskList);
                     } else {
-                      filteredList = taskList.where((element) => element.name.toLowerCase().contains(value.toLowerCase())).toList();
+                      filteredList = taskList
+                          .where((element) => element.name
+                              .toLowerCase()
+                              .contains(value.toLowerCase()))
+                          .toList();
                     }
                   });
                 },
               ),
             ),
-            Divider(thickness: 1.5),
+            const Divider(thickness: 1.5),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: filteredList.length,
               itemBuilder: (context, index) {
-                return ListItem(context,filteredList[index]);
+                return ListItem(context, filteredList[index]);
               },
             ),
           ],
@@ -76,12 +78,12 @@ class _d1State extends State<d1> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey.shade900,
-        child: Icon(Icons.edit_note_sharp, color: Colors.white),
+        child: const Icon(Icons.edit_note_sharp, color: Colors.white),
         onPressed: () async {
           var task = await Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DataScreen(),
+                builder: (context) => const DataScreen(),
               ));
           if (task != null) {
             setState(() {
@@ -97,7 +99,7 @@ class _d1State extends State<d1> {
 
   Widget ListItem(BuildContext context, [Task? task]) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(7, 5, 7, 5),
+      padding: const EdgeInsets.fromLTRB(7, 5, 7, 5),
       child: ListTile(
         isThreeLine: true,
         textColor: Colors.white,
@@ -106,7 +108,7 @@ class _d1State extends State<d1> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('${task?.description}'),
-            SizedBox(
+            const SizedBox(
               height: 7,
             ),
             Row(
@@ -117,7 +119,7 @@ class _d1State extends State<d1> {
                   decoration: BoxDecoration(
                       color: priorityColor(task), shape: BoxShape.circle),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
                 Text('${task?.priority} Priority'),
@@ -141,9 +143,9 @@ class _d1State extends State<d1> {
               shadowColor: priorityColor(task),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
-                  side: BorderSide(color: Colors.white30)),
+                  side: const BorderSide(color: Colors.white30)),
               color: priorityColor(task),
-              icon: Icon(Icons.more_vert, color: Colors.white),
+              icon: const Icon(Icons.more_vert, color: Colors.white),
               onSelected: (value) async {
                 if (value == 'Update') {
                   Task mTask = await Navigator.push(
@@ -158,8 +160,7 @@ class _d1State extends State<d1> {
                     taskList[index] = mTask;
                     filteredList.addAll(taskList);
                   });
-                }
-                else if (value == 'Delete') {
+                } else if (value == 'Delete') {
                   showDialog(
                     context: context,
                     builder: (context) {
@@ -170,8 +171,8 @@ class _d1State extends State<d1> {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.delete),
-                            Text('Are You Sure Want To Delete?',
+                            const Icon(Icons.delete),
+                            const Text('Are You Sure Want To Delete?',
                                 style: TextStyle(fontSize: 16)),
                           ],
                         ),
@@ -183,8 +184,8 @@ class _d1State extends State<d1> {
                                   style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                        BorderRadius.circular(20)),
-                                    side: BorderSide(
+                                            BorderRadius.circular(20)),
+                                    side: const BorderSide(
                                         color: Colors.grey, width: 1),
                                     backgroundColor: Colors.grey.shade900,
                                     elevation: 20,
@@ -192,13 +193,13 @@ class _d1State extends State<d1> {
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Text('cencel')),
+                                  child: const Text('cencel')),
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                        BorderRadius.circular(20)),
-                                    side: BorderSide(
+                                            BorderRadius.circular(20)),
+                                    side: const BorderSide(
                                         color: Colors.grey, width: 1),
                                     backgroundColor: Colors.grey.shade900,
                                     elevation: 20,
@@ -206,40 +207,57 @@ class _d1State extends State<d1> {
                                   onPressed: () {
                                     deleteTask(task);
                                   },
-                                  child: Text('Delete'))
+                                  child: const Text('Delete'))
                             ],
                           ),
                         ],
                       );
                     },
                   );
-                }
-                else if (value == 'Complate Task') {
+                } else if (value == 'Complate Task') {
                   setState(() {
-                    task?.taskD =true;
+                    task?.taskD = true;
                   });
                 }
               },
               itemBuilder: (context) {
-                return task?.taskD == false? [
-                  PopupMenuItem(
-                      value:'Update',
-                      child: Text('Update',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
-                  ),
-                  PopupMenuItem(
-                      value:'Delete',
-                      child: Text('Delete',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
-                  ),
-                  PopupMenuItem(
-                      value:'Complate Task',
-                      child: Text('Complate Task',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
-                  ),
-                ]:[
-                  PopupMenuItem(
-                      value:'Delete',
-                      child: Text('Delete',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
-                  ),
-                ];
+                return task?.taskD == false
+                    ? [
+                        const PopupMenuItem(
+                            value: 'Update',
+                            child: Text(
+                              'Update',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        const PopupMenuItem(
+                            value: 'Delete',
+                            child: Text(
+                              'Delete',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        const PopupMenuItem(
+                            value: 'Complate Task',
+                            child: Text(
+                              'Complate Task',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ]
+                    : [
+                        const PopupMenuItem(
+                            value: 'Delete',
+                            child: Text(
+                              'Delete',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                      ];
               },
             ),
           ],
@@ -287,6 +305,11 @@ class DataScreen extends StatefulWidget {
   State<DataScreen> createState() => _DataScreenState(task);
 }
 
+class d1 extends StatefulWidget {
+  @override
+  State<d1> createState() => _d1State();
+}
+
 class _DataScreenState extends State<DataScreen> {
   Task? task;
 
@@ -326,7 +349,7 @@ class _DataScreenState extends State<DataScreen> {
     if (picked != null && picked != selectedDate) {
       setState(() {
         dateController.text =
-        '${picked.day.toString().padLeft(2, '0')}/${picked.month.toString().padLeft(2, '0')}/${picked.year}';
+            '${picked.day.toString().padLeft(2, '0')}/${picked.month.toString().padLeft(2, '0')}/${picked.year}';
         selectedDate = picked;
       });
     }
@@ -346,7 +369,7 @@ class _DataScreenState extends State<DataScreen> {
     if (pickedTime != null && pickedTime != selectedTime) {
       setState(() {
         timeController.text =
-        '${pickedTime.hour}:${pickedTime.minute.toString().padLeft(2, '0')}  ${pickedTime.period.name.toUpperCase()}';
+            '${pickedTime.hour}:${pickedTime.minute.toString().padLeft(2, '0')}  ${pickedTime.period.name.toUpperCase()}';
         selectedTime = pickedTime;
       });
     }
@@ -357,7 +380,7 @@ class _DataScreenState extends State<DataScreen> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -370,11 +393,12 @@ class _DataScreenState extends State<DataScreen> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    prefixIcon: Icon(Icons.drive_file_rename_outline_sharp),
+                    prefixIcon:
+                        const Icon(Icons.drive_file_rename_outline_sharp),
                     hintText: 'Name :',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextField(
@@ -385,11 +409,11 @@ class _DataScreenState extends State<DataScreen> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    prefixIcon: Icon(Icons.description),
+                    prefixIcon: const Icon(Icons.description),
                     hintText: 'Description :',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextField(
@@ -403,11 +427,11 @@ class _DataScreenState extends State<DataScreen> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    prefixIcon: Icon(Icons.date_range_sharp),
+                    prefixIcon: const Icon(Icons.date_range_sharp),
                     hintText: 'Pick Date',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextField(
@@ -421,25 +445,25 @@ class _DataScreenState extends State<DataScreen> {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    prefixIcon: Icon(Icons.access_time),
+                    prefixIcon: const Icon(Icons.access_time),
                     hintText: 'Select Time',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   'set priority',
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 17),
                 ),
-                Divider(),
+                const Divider(),
                 Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Container(
-                    padding: EdgeInsets.only(left: 10, right: 10),
+                    padding: const EdgeInsets.only(left: 10, right: 10),
                     height: 70,
                     decoration: BoxDecoration(
                         color: Colors.grey.shade200,
@@ -450,7 +474,7 @@ class _DataScreenState extends State<DataScreen> {
                       borderRadius: BorderRadius.circular(20),
                       dropdownColor: Colors.grey,
                       elevation: 200,
-                      icon: Icon(Icons.settings_accessibility),
+                      icon: const Icon(Icons.settings_accessibility),
                       onChanged: (value) {
                         setState(() {
                           dropDownvalue = value! as String;
@@ -466,17 +490,17 @@ class _DataScreenState extends State<DataScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        side: BorderSide(color: Colors.grey, width: 1),
+                        side: const BorderSide(color: Colors.grey, width: 1),
                         backgroundColor: Colors.grey.shade900,
                         elevation: 20,
-                        padding: EdgeInsets.fromLTRB(140, 20, 140, 20)),
+                        padding: const EdgeInsets.fromLTRB(140, 20, 140, 20)),
                     onPressed: () {
                       var name = nameController.text;
                       var description = desController.text;
@@ -542,12 +566,12 @@ class Task {
 
   Task(
       {required this.id,
-        required this.name,
-        required this.description,
-        required this.date,
-        required this.time,
-        required this.priority,
-        required this.taskD});
+      required this.name,
+      required this.description,
+      required this.date,
+      required this.time,
+      required this.priority,
+      required this.taskD});
 
   @override
   String toString() {

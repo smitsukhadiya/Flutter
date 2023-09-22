@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_practical/practice/project/Routes/app_route.dart';
+import 'package:flutter_practical/practice/project/praference/pref_manager.dart';
 
 import '../../../constants.dart';
 
@@ -18,8 +19,16 @@ class _BodyState extends State<Body> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context,AppRoute.onBordingScreen);
+    Timer(const Duration(seconds: 3), () {
+     if(PrefManager.getLoginStatus()){
+       Navigator.pushReplacementNamed(context,AppRoute.home);
+     }else{
+       if(PrefManager.getOnboardingStatus()){
+         Navigator.pushReplacementNamed(context,AppRoute.login);
+       }else{
+         Navigator.pushReplacementNamed(context,AppRoute.onBordingScreen);
+       }
+     }
     });
   }
   @override
@@ -27,7 +36,7 @@ class _BodyState extends State<Body> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(decoration: BoxDecoration(gradient: kBackgroundGradient),),
+          Container(decoration: const BoxDecoration(gradient: kBackgroundGradient),),
           Center(
             child: Image.asset('assets/app_logo.png',width: 140,height: 140),
           ),

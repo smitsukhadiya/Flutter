@@ -89,7 +89,7 @@ class _multiselectlistexampleState extends State<multiselectlistexample> {
                     )
                 ),
               ),
-              SizedBox(height: 16,),
+              const SizedBox(height: 16,),
               TextField(
                 controller: _emailController,
                 cursorColor: Colors.grey,
@@ -106,7 +106,7 @@ class _multiselectlistexampleState extends State<multiselectlistexample> {
                   ),
                 ),
               ),
-              SizedBox(height: 16,),
+              const SizedBox(height: 16,),
               ElevatedButton(onPressed: () {
                 var name = _nameController.text;
                  var email = _emailController.text;

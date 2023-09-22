@@ -147,7 +147,7 @@ class _homescreenState extends State<homescreen> {
    });
   }else {
     throw Exception('Failed to load data');
-  }
+    }
   }
 
   void Update(BuildContext context,[Student? student]){
@@ -277,6 +277,9 @@ class _homescreenState extends State<homescreen> {
 
   }
 }
+
+
+
 class userScreen extends StatefulWidget {
  // final Student uid;
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practical/practice/project/Routes/app_route.dart';
 import 'package:flutter_practical/practice/project/Screens/OnBording/component/indicator.dart';
 import 'package:flutter_practical/practice/project/Screens/OnBording/component/slide_view.dart';
+import 'package:flutter_practical/practice/project/praference/pref_manager.dart';
 
 import '../../../model/item.dart';
 
@@ -61,6 +62,7 @@ class _BodyState extends State<Body> {
             ),
             ElevatedButton(onPressed: () {
               if(currentIndex == itemList.length -1){
+                PrefManager.updateOnboardingStatus(true);
                 Navigator.pushReplacementNamed(context,AppRoute.login);
               }else{
                 currentIndex++;

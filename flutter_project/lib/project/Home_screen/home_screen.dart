@@ -68,7 +68,7 @@ class _homescreenState extends State<homescreen> {
       ),*/
       body: _widgetOptions.elementAt(_selectedindex),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

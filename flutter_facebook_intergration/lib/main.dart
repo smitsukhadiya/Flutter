@@ -22,6 +22,7 @@ class Facebookauth extends StatefulWidget {
 class _FacebookauthState extends State<Facebookauth> {
 
   Map? userData;
+
   Future<void> Login() async {
     var result = await FacebookAuth.i.login(permissions: ["public_profile","email"]);
   if(result.status == LoginStatus.success){

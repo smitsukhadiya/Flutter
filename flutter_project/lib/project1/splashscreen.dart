@@ -8,18 +8,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Material App',
       home: splashscreen(),
       debugShowCheckedModeBanner: false,
     );
   }
-}
-class splashscreen extends StatefulWidget {
-  const splashscreen({Key? key}) : super(key: key);
-
-  @override
-  State<splashscreen> createState() => _splashscreenState();
 }
 
 class _splashscreenState extends State<splashscreen> {
@@ -27,31 +21,36 @@ class _splashscreenState extends State<splashscreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 6),() {
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => loginscreen()));
-    },);
+    Timer(
+      const Duration(seconds: 6),
+      () {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const loginscreen()));
+      },
+    );
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: [
           Container(
             color: Colors.black,
           ),
-          Image(
-            image: AssetImage('assets/200w.gif',),
+          const Image(
+            image: AssetImage(
+              'assets/200w.gif',
+            ),
             height: 200,
             width: 200,
           ),
           Container(
-
             alignment: Alignment.bottomCenter,
             child: Text(
               '↼ M E T A ⇁',
               style: TextStyle(
-
                 color: Colors.blue.shade300,
                 fontWeight: FontWeight.w900,
                 fontSize: 25,
@@ -61,6 +60,12 @@ class _splashscreenState extends State<splashscreen> {
         ],
       ),
     );
-   }
   }
+}
 
+class splashscreen extends StatefulWidget {
+  const splashscreen({Key? key}) : super(key: key);
+
+  @override
+  State<splashscreen> createState() => _splashscreenState();
+}
