@@ -61,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white12,
       appBar: AppBar(
         backgroundColor: Colors.black,
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))),
         title:
             const Text('ShoppiO App', style: TextStyle(color: Colors.white54)),
         centerTitle: true,
@@ -71,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(top: 12, bottom: 12),
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -139,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Container(
                                 padding: const EdgeInsets.all(6),
                                 decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: Colors.red.shade400,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child:  Text('Remain Stock ${itemList[index].stock}',
